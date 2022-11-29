@@ -12,22 +12,22 @@ class AlunoViewSet(viewsets.ModelViewSet):
     """Exibindo todos os alunos"""
     queryset = Aluno.objects.all()
     serializer_class = AlunoSerializer
-    authentication_classes = [BaseAuthentication]
-    permission_classes = [IsAuthenticated]
+    #authentication_classes = [BaseAuthentication]
+    #permission_classes = [IsAuthenticated]
 
 class CursoViewSet(viewsets.ModelViewSet):
     """Exibindo todos os cursos"""
     queryset = Curso.objects.all()
     serializer_class = CursoSerializer
-    authentication_classes = [BaseAuthentication]
-    permission_classes = [IsAuthenticated]
+    #authentication_classes = [BaseAuthentication]
+    #permission_classes = [IsAuthenticated]
 
 class MatriculaViewSet(viewsets.ModelViewSet):
     """Exibindo todos as matriculas"""
     queryset = Matricula.objects.all() 
     serializer_class = MatriculaSerializer
-    authentication_classes = [BaseAuthentication]
-    permission_classes = [IsAuthenticated]
+    #authentication_classes = [BaseAuthentication]
+    #permission_classes = [IsAuthenticated]
 
 
 class ListaMatriculasAluno(generics.ListAPIView):
@@ -37,8 +37,8 @@ class ListaMatriculasAluno(generics.ListAPIView):
         return queryset
     
     serializer_class = ListaMatriculaAlunoSerializer
-    authentication_classes = [BaseAuthentication]
-    permission_classes = [IsAuthenticated]
+    #authentication_classes = [BaseAuthentication]
+    #permission_classes = [IsAuthenticated]
 
 class ListaAlunosMatriculaCurso(generics.ListAPIView):
     """Exibindo todos os alunos matriculados por curso"""
@@ -47,5 +47,5 @@ class ListaAlunosMatriculaCurso(generics.ListAPIView):
         return queryset
     
     serializer_class = ListaAlunosMatriculadosSerializer
-    authentication_classes = [BaseAuthentication]
-    permission_classes = [IsAuthenticated]
+    #authentication_classes = [BaseAuthentication]
+    #permission_classes = [IsAuthenticated]
