@@ -3,10 +3,15 @@ from rest_framework import permissions
 from escola.admin import Alunos
 from django.shortcuts import render
 from rest_framework import serializers, viewsets, generics
-from escola.models import Aluno, Curso, Matricula
-from escola.serializer import AlunoSerializer, CursoSerializer, ListaAlunosMatriculadosSerializer, MatriculaSerializer, ListaMatriculaAlunoSerializer
+from escola.models import Aluno, Curso, Matricula, Cliente
+from escola.serializer import AlunoSerializer, CursoSerializer, ListaAlunosMatriculadosSerializer, MatriculaSerializer, ListaMatriculaAlunoSerializer, ClienteSerializer
 from rest_framework.authentication import BaseAuthentication, BasicAuthentication
 from rest_framework.permissions import IsAuthenticated
+
+class ClientesViewSet(viewsets.ModelViewSet):
+    """Listando clientes"""
+    queryset = Cliente.objects.all()
+    serializer_class = ClienteSerializer
 
 class AlunoViewSet(viewsets.ModelViewSet):
     """Exibindo todos os alunos"""
